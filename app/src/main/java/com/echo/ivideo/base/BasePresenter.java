@@ -7,4 +7,9 @@ public abstract class BasePresenter<V extends IBaseView> implements IBasePresent
     public void attachView(V view) {
         this.mView = view;
     }
+
+    @Override
+    public void detachView() {
+        this.mView = null;
+    }
 }

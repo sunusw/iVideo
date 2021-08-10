@@ -27,6 +27,15 @@ public abstract class BaseActivity<P extends IBasePresenter> extends AppCompatAc
         initView();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
+    }
+
+
     /**
      * 初始化mPresenter
      */
